@@ -1,5 +1,7 @@
 package com.dillo.hibernateuser;
 
+import com.dillo.hibernateuser.controller.UserService;
+
 /**
  * Hello world!
  *
@@ -8,6 +10,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+    	UserService obj = new UserService();
+    	obj.createUser();
     }
 }
