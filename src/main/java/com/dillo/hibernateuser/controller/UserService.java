@@ -66,4 +66,18 @@ public class UserService {
 		factory.close();
 		session.close();
 	}
+	
+	public void findUser(int id) {
+		SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		Session session =factory.openSession();
+		Transaction t = session.beginTransaction();
+		
+		User u = session.get(User.class, id);
+		System.out.println("Fullname" + u.getFullname());
+		System.out.println("Email" + u.getEmail());
+		System.out.println("Password" + u.getPassword());
+		t.commit();
+		factory.close();
+		session.close();
+	}
 }
